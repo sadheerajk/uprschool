@@ -11,7 +11,7 @@ Uprschool is a web based project developed in Codeigniter that provides online v
 
 ## Screenshots
 
-# Login Page
+### Login Page
 
 ![image](https://user-images.githubusercontent.com/24701992/126976921-f8c65008-14b8-420f-ba66-b5cb41e9098f.png)
 
