@@ -1,6 +1,7 @@
 # Uprschool - An algorithm solution
 Uprschool is a web based project developed in Codeigniter that provides online video tutorials of programming languages with the source code + online execution, also a discussion forum where users can ask anything about the popst and will be answered by the expert or can by the any user.
 
+
 ## About me
 
 - About me, Its Sadheer Ajk | Software Enginner | Web developer | Freelancer
@@ -8,6 +9,7 @@ Uprschool is a web based project developed in Codeigniter that provides online v
 - 👯 I’m looking to collaborate with other content creators
 - 🥅 2020 Goals: Contribute more to Open Source projects
 - ⚡ Fun fact: I love to draw and play guitar / drums
+
 
 ## Screenshots
 
