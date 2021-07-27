@@ -23,8 +23,8 @@ Uprschool is a web based project developed in Codeigniter that provides online v
 
 
 
-### Post Video Page
-![image](https://user-images.githubusercontent.com/24701992/126977144-fd1a2173-55b9-4ee8-8b36-40a7d4617952.png)
+### Video Playing Page
+![21104537_888237428019569_1129032595_o](https://user-images.githubusercontent.com/24701992/127093644-703d26dd-e94f-4145-ae0f-d53715fb71ca.png)
 
 
 
