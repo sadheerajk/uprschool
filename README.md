@@ -1,5 +1,5 @@
 # Uprschool - An algorithm solution
-Uprschool is a web based project developed in Codeigniter that provides online video tutorials of programming languages with the source code + online execution, also a discussion forum where users can ask anything about the popst and will be answered by the expert or can by the any user.
+Uprschool is a web based project developed in Codeigniter that provides online video tutorials of programming languages with the source code + online execution, also a discussion forum where users can ask anything about the post and will be answered by the expert or can by the any user.
 
 
 ## About me
