@@ -1,0 +1,116 @@
+/* assets/css/dark-mode.css */
+body.dark-mode {
+    background-color: #121212 !important; /* Important to override inline styles if any remain */
+    color: #e0e0e0;
+}
+
+/* Override Bootstrap default panel and wrapper styles */
+body.dark-mode .panel,
+body.dark-mode #page-wrapper, /* From custom-home.css */
+body.dark-mode .custom-page-wrapper { /* From custom-home.css */
+    background-color: #1e1e1e !important; /* Important to override Bootstrap */
+    border-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar-default, /* Bootstrap default navbar */
+body.dark-mode .home-navbar { /* From custom-home.css */
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important; /* Darker shadow */
+}
+
+body.dark-mode .navbar-default .navbar-brand,
+body.dark-mode .navbar-default .navbar-nav > li > a {
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar-default .navbar-brand:hover,
+body.dark-mode .navbar-default .navbar-nav > li > a:hover {
+    color: #ffffff;
+}
+
+/* Text and Link Colors */
+body.dark-mode a {
+    color: #bb86fc; /* A common dark mode accent color */
+}
+
+body.dark-mode a:hover {
+    color: #9e67e8;
+}
+
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+    color: #f5f5f5;
+}
+
+/* Form Controls */
+body.dark-mode .form-control {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .form-control::placeholder {
+    color: #888;
+}
+
+body.dark-mode .btn-default {
+    background-color: #333;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+body.dark-mode .btn-default:hover {
+    background-color: #444;
+    border-color: #666;
+}
+
+body.dark-mode .btn-info {
+    background-color: #bb86fc; /* Using accent color */
+    border-color: #bb86fc;
+    color: #121212; /* Dark text on light button */
+}
+
+body.dark-mode .btn-info:hover {
+    background-color: #9e67e8;
+    border-color: #9e67e8;
+}
+
+/* Specific to home.php elements, you might need to add more based on other pages */
+body.dark-mode .popular-posts-area, /* From custom-home.css */
+body.dark-mode .post-table /* From custom-home.css */ {
+    background-color: #1e1e1e !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+    border-color: #333; /* if it has a border */
+}
+
+body.dark-mode .post-title-cell strong a { /* From custom-home.css */
+    color: #bb86fc;
+}
+
+body.dark-mode .home-pagination-col p, /* From custom-home.css */
+body.dark-mode .home-pagination-col a {
+    color: #e0e0e0;
+}
+
+body.dark-mode hr {
+    border-top-color: #444;
+}
+
+/* Ensure the dark mode toggle button itself is styled for dark mode */
+body.dark-mode #darkModeToggle {
+    background-color: #333;
+    border-color: #555;
+    color: #e0e0e0;
+}
+body.dark-mode #darkModeToggle:hover {
+    background-color: #444;
+    border-color: #666;
+}
+
+/* Add styles for iframe if needed, though direct styling of iframe content is not possible */
+body.dark-mode iframe {
+    /* Example: add a border or filter if it helps with dark mode aesthetics */
+    /* filter: grayscale(30%); */
+    border: 1px solid #333; /* Add a border to make it distinct */
+}

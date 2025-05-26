@@ -1,0 +1,176 @@
+/* Custom styles for the Uprschool Homepage */
+
+body.custom-home-body {
+    background-color: #e9e9e9;
+    overflow-x: hidden;
+}
+
+#wrapper.custom-home-wrapper {
+    background-color: #e9e9e9;
+}
+
+/* Navbar styles */
+.home-navbar { /* Replaces inline style and embedded .navbar */
+    background: #fff;
+    min-height: 50px; /* from embedded */
+    height: 110px; /* from inline */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* from embedded */
+    position: relative; /* from embedded */
+    margin-bottom: 30px; /* from embedded */
+}
+
+/* This rule from embedded .navbar-default seems to overlap with .home-navbar. 
+   .home-navbar already includes background and box-shadow.
+   If .navbar-default has other uses, it should be kept, otherwise it's redundant here.
+   For now, I'll assume it might be used by other elements with class navbar-default.
+*/
+.navbar-default.custom-navbar-default { /* Styles from embedded .navbar-default */
+    background: #fff; /* Redundant if home-navbar is also applied */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Redundant if home-navbar is also applied */
+}
+
+.home-navbar-brand-logo {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.home-navbar-brand-logo-img {
+    margin-top: -35px;
+}
+
+.home-search-form-container {
+    width: 670px;
+    margin-left: 300px;
+    margin-top: 30px;
+}
+
+.home-search-form-button {
+    height: 34px;
+}
+
+.home-navbar-top-links {
+    margin-top: -57px;
+}
+
+.home-auth-buttons {
+    margin-top: -47px;
+    margin-left: 1100px;
+}
+
+/* Page wrapper styles */
+#page-wrapper.custom-page-wrapper { /* Styles from embedded #page-wrapper */
+    height: 100%;
+    margin-top: -20px;
+    margin-left: 12px;
+    margin-right: 10px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Popular posts section styles */
+.popular-posts-area .post-table { /* Specific to tables within .popular-posts-area */
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-top: 20px;
+    float: left;
+    margin-left: 40px;
+}
+
+.popular-posts-area .post-table td { /* Specific to td within tables in .popular-posts-area */
+    background: #fff; /* Assuming this is intended for td as well from '.pa,table,tr,td' */
+    /* box-shadow should ideally be on the table, not individual cells */
+    /* position: relative; might not be needed for td */
+    /* margin-top: 20px; not typical for td */
+}
+
+
+.popular-posts-area .post-title-cell { /* For the <td> containing the post title */
+    font-size: 16px;
+    text-align: center;
+}
+
+.popular-posts-area a:hover { /* from embedded .pa a:hover */
+    color: red;
+    text-decoration: none;
+}
+
+/* Card Styles for Popular Posts */
+.popular-posts-row {
+    margin-top: 20px;
+}
+
+.post-card {
+    margin-bottom: 30px; /* Space between cards */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: box-shadow .2s ease-in-out;
+    background-color: #fff; /* Default background */
+}
+
+.post-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.post-card .card-video-top iframe {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    display: block; /* Remove any extra space below iframe */
+}
+
+.post-card .card-body {
+    padding: 15px;
+}
+
+.post-card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.post-card .card-title a {
+    color: #337ab7; /* Bootstrap primary color */
+    text-decoration: none;
+}
+
+.post-card .card-title a:hover {
+    color: #23527c; /* Darker primary color */
+    text-decoration: underline;
+}
+
+/* Dark mode specific styles for cards should go into dark-mode.css */
+/* These will be moved if a separate task for dark-mode.css updates is made */
+body.dark-mode .post-card {
+    background-color: #2a2a2a !important; /* Override light default */
+    border-color: #444;
+}
+
+body.dark-mode .post-card .card-title a {
+    color: #bb86fc; /* Dark mode accent */
+}
+
+body.dark-mode .post-card .card-title a:hover {
+    color: #9e67e8;
+}
+
+body.dark-mode .post-card .card-video-top iframe {
+     border-bottom: 1px solid #444; /* Add a separator in dark mode */
+}
+
+/* Pagination/column styles */
+.home-pagination-col {
+    margin-left: 600px;
+    margin-top: -35px;
+    font-size: 20px;
+}
+
+.home-pagination-col .pages-link { /* Applied to the <p> tag holding the $pages link */
+    color: green;
+    margin-right: 190px;
+}
+
+.home-pagination-col a:hover { /* from embedded .col a:hover */
+    color: red;
+    text-decoration: none;
+}

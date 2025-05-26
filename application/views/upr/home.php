@@ -3,200 +3,118 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="refresh" content="10;">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Uprschool | Homepage</title>
 <link rel="icon" type="image/vnd.microsoft.icon" href="<?php echo base_url().'/images/ico.png';?>" />
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/custom-home.css';?>">
+<link rel="stylesheet" type="text/css" id="dark-mode-css" href="<?php echo base_url().'assets/css/dark-mode.css';?>">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/typography.css';?>">
 </head>
 
-<body style="background-color: #e9e9e9; overflow-x: hidden;" >
+<body class="custom-home-body">
 
-<div id="wrapper" style="background-color: #e9e9e9;">
+<div id="wrapper" class="custom-home-wrapper">
 
-<style type="text/css">
-            
-                .navbar{
-   background: #fff;
-    min-height: 50px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
-    margin-bottom: 30px;
-
-                }
-                </style>
-        <nav class="navbar navbar-default navbar-static-top" style="background-color: #fff; height: 110px;" role="navigation" style=" height:100px;">
+        <nav class="navbar navbar-default navbar-static-top home-navbar custom-navbar-default" role="navigation">
             <div class="navbar-header">
-               
-                
-                <a class="navbar-brand" href="<?php echo base_url().'index.php/home/index'?>"><div class="logo" style="margin-top:20px; margin-left:30px;"><img src="<?php echo base_url().'/images/uprlogo.png';?>" style="margin-top:-35px;"  height="100"></div></font></a>
+                <a class="navbar-brand" href="<?php echo base_url().'index.php/home/index'?>"><div class="logo home-navbar-brand-logo"><img src="<?php echo base_url().'/images/uprlogo.png';?>" class="home-navbar-brand-logo-img"  height="100"></div></a>
             </div>
             <!-- /.navbar-header -->
 
-
             <div>
-                                 <form method="post" action="<?php echo base_url().'index.php/search/find'?>">
-                            <div class="input-group custom-search-form" style="width:670px; margin-left:300px;margin-top:30px;">
+                <form method="post" action="<?php echo base_url().'index.php/search/find'?>">
+                    <div class="input-group custom-search-form home-search-form-container">
+                        <input type="text" class="form-control" required="book_name" name="book_name" size="80px" placeholder="Search or Find Anything">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default home-search-form-button" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
 
-                                <input type="text" class="form-control" required="book_name" name="book_name" size="80px" placeholder="Search or Find Anything">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default"  style="height:34px;" type="submit">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-
-                            </div>
-</form>
-        
-</div>
-
-<?php if ($this->session->userdata('login')){ 
-
-    ?>
-
-<ul class="nav navbar-top-links navbar-right" style="margin-top:-57px; ">
-             <li class="dropdown">
+            <?php if ($this->session->userdata('login')){ ?>
+            <ul class="nav navbar-top-links navbar-right home-navbar-top-links">
+                <li><button id="darkModeToggle" class="btn btn-outline-secondary" style="margin-top: 8px; margin-right: 15px;"><i class="fa fa-moon-o"></i></button></li>
+                <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i ><img class="img-circle user-image" width="40" src="<?=base_url()?>/profiles/<?=$photo?>" ></i>  <strong><?=$firstname?>  <?=$lastname?>  </strong>
+                        <i><img class="img-circle user-image" width="40" src="<?=base_url()?>/profiles/<?=$photo?>" ></i>  <strong><?=$firstname?>  <?=$lastname?>  </strong>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="<?php echo base_url().'index.php/profile/index'?>"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-
-                        <li><a href="<?php echo base_url().'index.php/accounts/lock' ?>"><i class="fa fa-lock fa-lg"></i> Lock</a>
-                        </li>
+                        <li><a href="<?php echo base_url().'index.php/profile/index'?>"><i class="fa fa-user fa-fw"></i> User Profile</a></li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a></li>
+                        <li><a href="<?php echo base_url().'index.php/accounts/lock' ?>"><i class="fa fa-lock fa-lg"></i> Lock</a></li>
                         <li class="divider"></li>
-                        <li><a href="<?php echo base_url().'index.php/accounts/logout'?>"><i class="fa fa-sign-out fa-fw"></i> Logout  <strong><?=$firstname?>  <?=$lastname?></a></strong>
-                        </li>
+                        <li><a href="<?php echo base_url().'index.php/accounts/logout'?>"><i class="fa fa-sign-out fa-fw"></i> Logout  <strong><?=$firstname?>  <?=$lastname?></a></strong></li>
                     </ul>
-                    <!-- /.dropdown-user -->
                 </li>
-                <!-- /.dropdown -->
             </ul>
+            <?php } else { ?>
+            <button id="darkModeToggle" class="btn btn-outline-secondary" style="margin-top: 8px; margin-right: 15px; float: right; position: relative; z-index: 1000;"><i class="fa fa-moon-o"></i></button>
+            <div class="buttons home-auth-buttons">
+                <a href="<?php echo base_url().'index.php/signup/index'?>"><button type="button" class="btn btn-default">Sign Up</button></a>
+                <a href="<?php echo base_url().'index.php/login/index'?>"><button type="button" class="btn btn-info">Log in</button></a>     
+            </div>
+            <?php } ?>
+        </nav> <!-- Closing nav from navbar-static-top -->
+        <!-- Removed duplicate </nav> and other stray closing tags like </font> </a> </div> -->
 
- <?php } else{ ?>
-        
-                <div class="buttons" style="margin-top:-47px;margin-left:1100px;">
-                    <a href="<?php echo base_url().'index.php/signup/index'?>"><button type="button" class="btn btn-default">Sign Up</button></a>
-                    <a href="<?php echo base_url().'index.php/login/index'?>"><button type="button" class="btn btn-info">Log in</button></a>     
-                    <?php } ?>         
-           </div>
-      </a>
-      </div>
-     
+        <div id="page-wrapper" class="custom-page-wrapper">
+            <hr/>
+            <h2>Popular Posts</h2><hr/>
+            <div class="pa popular-posts-area">
+                <div class="row popular-posts-row">
+                    <?php if(!isset($posts) || empty($posts)){ ?>
+                        <div class="col-12">
+                            <h2>There are currently no posts on my blog.</h2>
+                        </div>
+                    <?php } else {
+                        foreach ($posts as $row) { ?>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="card post-card h-100">
+                                <div class="card-video-top">
+                                    <iframe width="100%" height="170" frameborder="0" allowfullscreen src="<?= $row['video'];?>?controls=0&showinfo=0"></iframe>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="<?php echo base_url()?>index.php/posts/readpost/<?=$row['id']?>/<?=$row['cate']?>"><?= $row['title'];?></a></h5>
+                                    <?php /* Add other post details here if available and desired, e.g., category, date */ ?>
+                                </div>
+                            </div>
+                        </div>
+                    <?php }    
+                    } ?>
+                </div> <!-- Closing div for .row.popular-posts-row -->
+            </div> <!-- Closing div for .pa.popular-posts-area -->
 
-        <style type="text/css">
-            
-                .navbar-default{
-   background: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    
-
-                }
-                </style>
-
-  
-            <!-- /.navbar-static-side -->
-        </nav>
-</nav>
-
-   <style type="text/css">
-            
-                #page-wrapper{
-                    height: 100%;
-                    margin-top: -20px;
-                    margin-left: 12px;
-                    margin-right: 10px;
-
-                    
-
-   background: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-</style>
-
-        <div id="page-wrapper">
-
-<style type="text/css">
-            
-                .pa,table,tr,td{
-   background: #fff;
-   
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    position: relative;
-    margin-top: 20px;
-
-                }
-
- .pa a:hover{
-                color:red;
-                text-decoration: none;
-                }
-
-                </style>
- <hr/>
-        <h2>Papular Posts</h2><hr/>
-       
-              <div class="pa">       
-<?php if(!isset($posts)){
-?>
-<h2>There are currently no posts on my blog.</h2>
-<?php
-}else
-{
-    foreach ($posts as $row) { ?>
-
-            
-         <table style="float:left; margin-left:40px;" cellspacing="50">
-         <tr colspan="2">             
-         <td><iframe width="260" height="130" frameborder="0" allowfullscreen src="<?= $row['video'];?>?controls=0&showinfo=0" ></iframe></td></tr></a>
-         
-         <tr><td style="font-size:16px; text-align: center;"><strong><a href=" <?php echo base_url()?>index.php/posts/readpost/<?=$row['id']?>/<?=$row['cate']?>"><?= $row['title'];?></strong>  </td></tr>
-</a></strong></td></tr>
-        
-         </table>
-     
-
-
-<?php
-}    
-?>
-
-  </div></div>
-
- <style type="text/css">
-
-                .col a:hover{
-                color:red;
-                text-decoration: none;
-
-                }
-                </style>
-<div class="col" style="margin-left:600px;margin-top:-35px;font-size:20px;">
-<p style="color:green;margin-right:190px; "><?=$pages; ?></p>
-                </div>
-
+            <div class="col home-pagination-col">
+                <p class="pages-link"><?=$pages; ?></p>
+            </div>
         </div>
         <!-- /#page-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 
-</div>
-
-</div>
-
-</html>
+    <!-- Removed extra </div> and </html> here, it's at the very end -->
 
     <!-- jQuery -->
-
+<script src="<?php echo base_url().'assets/js/dark-mode-toggle.js';?>"></script>
 </body>
-
 </html>
 <?php
- }
-?> 
+// Removed extra } here that was causing a syntax error. 
+// The main check for $posts should determine if we iterate or show "no posts".
+// The closing PHP brace for the "else" part of if(!isset($posts)) was missing.
+// It appears there was an overall issue with conditional rendering of posts vs no posts message.
+// The original code had a stray `}` after the main HTML closing tag.
+// The provided diff had some structural issues with how the PHP `else` for `!isset($posts)` was handled.
+// I'm aiming to correct the structure based on typical PHP templating.
+// The last `}` was removed as it seemed to be outside any PHP block.
+// The original file has `foreach ($posts as $row) { ... } }` then `</div></div>`
+// The `</div></div>` should be `</div>` for `pa` and then `</div>` for `page-wrapper` if the structure is nested.
+// However, the structure shows popular-posts-area closing, then pagination col, then page-wrapper closing.
+// The `</div></div>` after the loop was problematic. One `</div>` is for `popular-posts-area`.
+// The final `}` was outside any PHP block.
+?>
