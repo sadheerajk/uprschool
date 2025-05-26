@@ -1,0 +1,21 @@
+/* General Typography Improvements */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "liga" on; /* Enable ligatures for better text rendering */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600; /* Slightly bolder headings for better hierarchy */
+}
+
+p {
+    line-height: 1.6; /* Improved line height for body text */
+}
+
+/* Improve readability for long text sections if any exist */
+.readable-content {
+    max-width: 720px; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
